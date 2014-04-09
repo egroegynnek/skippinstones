@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+  <head>
+  <title>skippin stones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css">
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+</head>
+    <body>
+        <div data-role="page">
+
+            <div data-role="header">
+            </div>
+
+            <div data-role="content">
+            </div>
+
+            <div data-role="footer">
+            </div>
+
+        </div>
+        <style type="text/css">
+		
+body {
+    background: url(assets/startscreen.png);
+    background-repeat:repeat-y;
+    background-position:center center;
+    background-attachment:scroll;
+    background-size:100% 100%;
+}
+.ui-page {
+    background: transparent;
+}
+.ui-content{
+    background: transparent;
+}
+
+	  <script type='text/javascript' src='jquery.jsmovie.min.js'></script>
+    </head>
+    <body>
+        <div id='movie'></div>
+        <div id='play'>play</div>
+        <div id='stop'>stop</div>
+        <div id='pause'>pause</div>
+	<body>
+	
+	$(document).ready(function(){
+
+    $('#movie').jsMovie({
+        sequence: 'animation####.skippin.png',
+        from: 1,
+        to: 14
+        folder : "ani/",
+        height:200,
+        width:300,
+        loader: {path:"img/preloader.png",height:50,width:50,rows:2,columns:4},        
+    });
+
+    $('#play').click(function(){
+        $('#movie').jsMovie('play');
+    });
+
+    $('#stop').click(function(){
+        $('#movie').jsMovie('stop');
+    });
+
+    $('#pause').click(function(){
+        $('#movie').jsMovie('pause');
+    });
+
+});
+
+    </body>
+</html>
